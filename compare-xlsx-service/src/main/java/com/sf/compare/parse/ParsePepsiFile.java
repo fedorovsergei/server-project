@@ -1,6 +1,7 @@
 package com.sf.compare.parse;
 
 import com.sf.compare.dto.CompareField;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
@@ -15,9 +16,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-@Component
 @Slf4j
+@Component
+@RequiredArgsConstructor
 public class ParsePepsiFile {
+
+    private final Utils utils;
 
     @SneakyThrows
     public Set<CompareField> parse(InputStream inputStream, Integer pepsiNamePosition, Integer pepsiCountPosition) {
@@ -30,13 +34,14 @@ public class ParsePepsiFile {
                 Cell cellName = row.getCell(pepsiNamePosition - 1);
                 Cell cellCount = row.getCell(pepsiCountPosition - 1);
                 try {
-                    String name = parseName(cellName.getStringCellValue());
+                    String name = utils.parseName(cellName.getStringCellValue());
                     if (name.isEmpty()) continue;
                     CompareField compareField = CompareField
                             .builder()
                             .code(cellName.getStringCellValue())
                             .count(cellCount.getNumericCellValue())
                             .build();
+
                     result.merge(name, compareField, (first, second) ->
                             CompareField
                                     .builder()
@@ -49,9 +54,5 @@ public class ParsePepsiFile {
             }
         }
         return new HashSet<>(result.values());
-    }
-
-    private String parseName(String stringCellValue) {
-        return stringCellValue.replaceAll("[a-zA-Zа-яА-Я]*", "").replaceAll("_\\d{2}\\.\\d{2}_", "");
     }
 }

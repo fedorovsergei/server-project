@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -19,9 +18,12 @@ public class UserController {
 
     @PostMapping("/compare")
     public ResponseDto getCompare(@RequestBody RequestDto requestDto) {
-        log.info("[API] start compere files");
-        ResponseDto result = parseService.getParse(requestDto);
-        log.info("return {}", result);
-        return result;
+        log.info("[API] start call POST method /compare");
+        try {
+            return parseService.getParse(requestDto);
+        } catch (Exception e) {
+            log.error("exception in ui service");
+            throw new IllegalArgumentException();
+        }
     }
 }
