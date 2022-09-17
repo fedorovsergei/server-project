@@ -1,5 +1,9 @@
 version: '3.9'
 
+networks:
+  default:
+    name: backend
+
 services:
 
   weather-service:
