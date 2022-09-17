@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<div th:if="errorFlag">
+<div th:if="${errorFlag} == true">
     <div>Произошла ошибка</div>
 </div>
-<div th:unless="!errorFlag">
+<div th:unless="${errorFlag} != true">
     <div>
         <a>разница в файлах</a>
         <th scope="row"><a th:text="${resultCompare.getCompare()}"></a></th>
