@@ -22,6 +22,9 @@ public class WeatherController {
     public String getWeather(Model model) {
         WeatherServiceResponseDto weather = weatherFeignService.getWeather();
         System.out.println(weather);
+        if (weather == null) {
+            weather = WeatherServiceResponseDto.builder().valueEvening("tss").build();
+        }
         model.addAttribute("weather", weather);
         return "weather";
     }
