@@ -26,7 +26,7 @@ public class ParseController {
     @GetMapping("/get")
     @SneakyThrows
     public String getWeather() {
-        return "resultCompare";
+        return "compare";
     }
 
 
