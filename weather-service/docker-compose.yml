@@ -7,6 +7,6 @@ networks:
 services:
 
   weather-service:
-    build: ./weather-service
+    build: ./
     container_name: 'weather-service'
     image: 'weather-service'

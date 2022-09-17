@@ -7,7 +7,7 @@ networks:
 services:
 
   ui-service:
-    build: ./ui-service
+    build: ./
     container_name: 'ui-service'
     image: 'ui-service'
     ports:

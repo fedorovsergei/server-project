@@ -7,6 +7,6 @@ networks:
 services:
 
   compare-xlsx-service:
-    build: ./compare-xlsx-service
+    build: ./
     container_name: 'compare-xlsx-service'
     image: 'compare-xlsx-service'
