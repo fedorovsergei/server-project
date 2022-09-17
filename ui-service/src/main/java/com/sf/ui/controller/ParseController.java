@@ -42,7 +42,9 @@ public class ParseController {
                              Model model) {
         System.out.println(oneCFile.getName());
         System.out.println(pepsiFile.getName());
-        CompareXlsxServiceResponseDto resultCompare = compareXlsxFeignService.getCompare(CompareXlsxServiceRequestDto
+        CompareXlsxServiceResponseDto resultCompare = CompareXlsxServiceResponseDto.builder().build();
+
+        resultCompare = compareXlsxFeignService.getCompare(CompareXlsxServiceRequestDto
                 .builder()
                 .oneCFile(Base64.encodeBase64String(oneCFile.getBytes()))
                 .oneCNamePosition(oneCNamePosition)
