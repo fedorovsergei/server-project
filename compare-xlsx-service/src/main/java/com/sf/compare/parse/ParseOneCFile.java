@@ -35,7 +35,7 @@ public class ParseOneCFile {
                 Cell cellCountPlus = row.getCell(oneCPlusPosition - 1);
                 Cell cellCountMinus = row.getCell(oneCMinusPosition - 1);
                 try {
-                    String name = utils.parseName(cellName.getStringCellValue());
+                    String name = utils.splitAndParse(cellName.getStringCellValue());
                     if (name.isEmpty()) continue;
                     double count = (cellCountPlus == null || cellCountPlus.getNumericCellValue() == 0.0)
                             ? cellCountMinus.getNumericCellValue() * -1 : cellCountPlus.getNumericCellValue();
@@ -59,4 +59,6 @@ public class ParseOneCFile {
         }
         return new HashSet<>(result.values());
     }
+
+
 }
