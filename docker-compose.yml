@@ -11,8 +11,8 @@ services:
     build: ./weather-service
     container_name: 'weather-service'
     image: 'weather-service'
-    links:
-      - 'postgres:postgres'
+    networks:
+      - 'postgres'
 
   compare-xlsx-service:
     build: ./compare-xlsx-service
