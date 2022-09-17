@@ -33,9 +33,9 @@ public class WeatherService {
         WeatherHistory weatherHistory = weatherRepository.findByTime(now);
         if (weatherHistory == null) {
             log.info("weather not found in db, call remote page");
-            weatherHistory = callUrl(now);
+//            weatherHistory = callUrl(now);
         }
-        log.info("return find weather for {}", weatherHistory.getTime());
+//        log.info("return find weather for {}", weatherHistory.getTime());
         return Objects.requireNonNull(weatherHistory);
     }
 
