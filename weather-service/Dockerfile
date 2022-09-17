@@ -1,10 +1,11 @@
-FROM maven:openjdk as build
+FROM maven:3.6.0-jdk-15-slim AS build
 ENV HOME=/usr/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
 ADD . $HOME
-RUN mvn package
+USER root
+RUN --mount=type=cache,target=/root/.m2 mvn -f /home/build/pom.xml clean compile
 
 FROM openjdk:15
-COPY --from=build /usr/app/target/*.jar /app/weather-service.jar
-ENTRYPOINT java -jar /app/weather-service.jar
+COPY --from=build /usr/app/target/*.jar /app/app.jar
+ENTRYPOINT java -jar /app/app.jar
