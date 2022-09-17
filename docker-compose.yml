@@ -1,10 +1,5 @@
 version: '3.9'
 
-networks:
-  postgres:
-    driver: bridge
-
-
 services:
 
   weather-service:
@@ -12,7 +7,7 @@ services:
     container_name: 'weather-service'
     image: 'weather-service'
     networks:
-      - 'postgres'
+      - 'bridge'
 
   compare-xlsx-service:
     build: ./compare-xlsx-service
