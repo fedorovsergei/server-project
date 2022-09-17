@@ -30,15 +30,13 @@
 
 #*****************
 FROM maven:3.6-adoptopenjdk-15 as target
-ENV HOME=/build
+WORKDIR /build
 COPY pom.xml .
 RUN mvn dependency:go-offline
 
-COPY src/ $HOME/src/
+COPY src/ /build/src/
 RUN mvn package
 
-# Step : Package image
 FROM openjdk:15
-EXPOSE 4567
 CMD exec java $JAVA_OPTS -jar /app/my-app.jar
-COPY --from=target $HOME/target/*.jar /app/my-app.jar
+COPY --from=target /build/target/*.jar /app/my-app.jar
