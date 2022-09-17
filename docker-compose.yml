@@ -1,9 +1,10 @@
-version: '3'
+version: '3.3'
+
+networks:
+  etl_dev:
+    external: true
 
 services:
-  networks:
-    etl_dev:
-      external: true
 
   weather-service:
     build: ./weather-service
