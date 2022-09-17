@@ -5,8 +5,8 @@ services:
   weather-service:
     build: ./weather-service
     container_name: 'weather-service'
-#    networks:
-#      - postgres
+    networks:
+      - postgres
 
   compare-xlsx-service:
     build: ./compare-xlsx-service
