@@ -1,8 +1,10 @@
 version: '3.3'
 
 networks:
-  etl_dev:
-    external: true
+  postgres:
+    external:
+      name: postgres
+
 
 services:
 
