@@ -30,9 +30,7 @@
 
 #*****************
 FROM maven:3.6-adoptopenjdk-15 as target
-ENV HOME=/usr/app
-RUN mkdir -p $HOME
-WORKDIR $HOME
+ENV HOME=/build
 COPY pom.xml .
 RUN mvn dependency:go-offline
 
