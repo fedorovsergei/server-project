@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:if="errorFlag">
+    <div>Произошла ошибка</div>
+</div>
+<div th:unless="!errorFlag">
+    <div>
+        <a>разница в файлах</a>
+        <th scope="row"><a th:text="${resultCompare.getCompare()}"></a></th>
+        <br>
+        <a>файл 1с</a>
+        <th scope="row"><a th:text="${resultCompare.getOneCFile()}"></a></th>
+        <br>
+        <a>файл пепси</a>
+        <th scope="row"><a th:text="${resultCompare.getCompare()}"></a></th>
+    </div>
+</div>
+
+</body>
+</html>

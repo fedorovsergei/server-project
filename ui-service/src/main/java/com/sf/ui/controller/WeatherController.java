@@ -1,13 +1,12 @@
 package com.sf.ui.controller;
 
-import com.sf.ui.remote.WeatherFeignService;
 import com.sf.ui.remote.dto.WeatherServiceResponseDto;
+import com.sf.ui.service.RemoteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
@@ -16,16 +15,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class WeatherController {
 
-    private final WeatherFeignService weatherFeignService;
+    private final RemoteService remoteService;
 
     @GetMapping("/get")
     public String getWeather(Model model) {
-        WeatherServiceResponseDto weather = weatherFeignService.getWeather();
-        System.out.println(weather);
-        if (weather == null) {
-            weather = WeatherServiceResponseDto.builder().valueEvening("tss").build();
+        log.info("[API] start call method /weather/get");
+        try {
+            WeatherServiceResponseDto result = remoteService.getWeather();
+            if (result != null) {
+                model.addAttribute("weather", result);
+                return "weather";
+            }
+        } catch (Exception e) {
+            log.error("exception in ui service");
         }
-        model.addAttribute("weather", weather);
+        model.addAttribute("errorFlag", true);
         return "weather";
     }
 }

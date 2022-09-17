@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="errorFlag">
+    <div>Произошла ошибка</div>
+</div>
+<div th:unless="!errorFlag">
+    <form method="POST" enctype="multipart/form-data" action="/parse/get">
+        файл из 1с: <input type="file" name="oneCFile" required><br/>
+        файл пепси: <input type="file" name="pepsiFile" required><br/>
+        номер столбца кода в файле 1с: <input type="number" name="oneCNamePosition" required><br/> <br/>
+        номер столбца плюсовой позиции в файле 1с: <input type="number" name="oneCPlusPosition" required><br/> <br/>
+        номер столбца минусовой позиции в файле 1с: <input type="number" name="oneCMinusPosition" required><br/> <br/>
+        номер столбца кода в файле пепси: <input type="number" name="pepsiNamePosition" required><br/> <br/>
+        номер столбца количества в файле пепси: <input type="number" name="pepsiCountPosition" required><br/> <br/>
+
+        <input type="submit" value="Upload">
+        Press here to upload the file!
+    </form>
+</div>
+</br>
+</br>
+</br>
+
+</body>
+</html>
