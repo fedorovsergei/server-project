@@ -40,5 +40,5 @@ RUN mvn package
 # Step : Package image
 FROM openjdk:15
 EXPOSE 4567
-CMD exec java $JAVA_OPTS -jar /app/app.jar
-COPY --from=target /build/target/*app.jar /app/app.jar
+CMD exec java $JAVA_OPTS -jar /app/my-app.jar
+COPY --from=target /build/target/*.jar /app/my-app.jar
