@@ -1,4 +1,4 @@
-FROM maven:3.6.0-jdk-15-slim AS build
+FROM maven:openjdk as build
 ENV HOME=/usr/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
