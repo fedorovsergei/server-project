@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data" action="/parse/get">
+    oneCFile: <input type="file" name="oneCFile"><br/>
+    pepsiFile: <input type="file" name="pepsiFile"><br/>
+    oneCNamePosition: <input type="number" name="oneCNamePosition"><br/> <br/>
+    oneCPlusPosition: <input type="number" name="oneCPlusPosition"><br/> <br/>
+    oneCMinusPosition: <input type="number" name="oneCMinusPosition"><br/> <br/>
+    pepsiNamePosition: <input type="number" name="pepsiNamePosition"><br/> <br/>
+    pepsiCountPosition: <input type="number" name="pepsiCountPosition"><br/> <br/>
+
+
+    <input type="submit" value="Upload">
+    Press here to upload the file!
+</form>
+</br>
+</br>
+</br>
+<div>
+    <a>разница в файлах</a>
+    <th scope="row"><a th:text="${resultCompare.getCompare()}"></a></th>
+<!--    <th scope="row"><a th:text="${resultCompare.getOneCFile()}"></a></th>-->
+<!--    <th scope="row"><a th:text="${resultCompare.getCompare()}"></a></th>-->
+</div>
+</body>
+</html>

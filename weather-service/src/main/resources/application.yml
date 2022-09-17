@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/weather-service
+    username: postgres
+    password: root
+  liquibase:
+    change-log: liquibase/changeLog.xml
+
+app:
+  remote:
+    url: https://yandex.ru
+    weather-now: weather__temp
+    weather_evening: weather__forecast
+    agent: Chrome/4.0.249.0 Safari/532.5
+  cron:
+    remote-call: 1 0/10 * * * *

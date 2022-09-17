@@ -1,0 +1,5 @@
+app:
+  feign:
+    weather-service-url: weather-service:8080
+    compare-xlsx-service-url: compare-xlsx-service:8080
+#    compare-xlsx-service-url: localhost:8081

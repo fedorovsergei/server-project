@@ -1,0 +1,15 @@
+package com.ui.service.utils;
+
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Data
+@Configuration
+@ConfigurationProperties(prefix = "app.feign")
+public class ApplicationProperties {
+
+    private String weatherServiceUrl;
+    private String compareXlsxServiceUrl;
+
+}
