@@ -1,8 +1,8 @@
 version: '3.9'
 
-networks:
-  frontend:
-    name: postgres
+#networks:
+#  frontend:
+#    name: postgres
 
 
 services:
@@ -11,8 +11,8 @@ services:
     build: ./weather-service
     container_name: 'weather-service'
     image: 'weather-service'
-    networks:
-      - postgres
+#    networks:
+#      - postgres
 
   compare-xlsx-service:
     build: ./compare-xlsx-service
