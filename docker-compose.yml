@@ -1,10 +1,9 @@
-version: '3.9'
+version: '3'
 
 services:
   networks:
     etl_dev:
       external: true
-
 
   weather-service:
     build: ./weather-service
