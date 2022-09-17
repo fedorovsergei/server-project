@@ -24,7 +24,7 @@ public class Utils {
         String[] a = stringCellValue.split(" ");
         for (String s : a) {
             if (s.contains("/")) {
-                return parseName(stringCellValue);
+                return parseName(s.trim());
             }
         }
         return "";
