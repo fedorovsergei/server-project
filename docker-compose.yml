@@ -12,7 +12,7 @@ services:
     container_name: 'weather-service'
     image: 'weather-service'
     links:
-      - "postgres"
+      - "db:postgres"
 
   compare-xlsx-service:
     build: ./compare-xlsx-service
