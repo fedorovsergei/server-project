@@ -11,5 +11,4 @@ public class ApplicationProperties {
 
     private String weatherServiceUrl;
     private String compareXlsxServiceUrl;
-
 }

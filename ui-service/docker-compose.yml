@@ -12,4 +12,3 @@ services:
     image: 'ui-service'
     ports:
       - "80:8080"
-
