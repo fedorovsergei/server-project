@@ -1,6 +1,6 @@
-package com.ui.service.remote;
+package com.sf.ui.remote;
 
-import com.ui.service.remote.dto.WeatherServiceResponseDto;
+import com.sf.ui.remote.dto.WeatherServiceResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

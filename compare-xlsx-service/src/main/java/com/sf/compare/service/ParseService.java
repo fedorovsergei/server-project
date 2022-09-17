@@ -1,10 +1,10 @@
-package com.fedorov.demo.service;
+package com.sf.compare.service;
 
-import com.fedorov.demo.dto.RequestDto;
-import com.fedorov.demo.dto.ResponseDto;
-import com.fedorov.demo.dto.CompareField;
-import com.fedorov.demo.parse.ParseOneCFile;
-import com.fedorov.demo.parse.ParsePepsiFile;
+import com.sf.compare.dto.RequestDto;
+import com.sf.compare.dto.ResponseDto;
+import com.sf.compare.dto.CompareField;
+import com.sf.compare.parse.ParseOneCFile;
+import com.sf.compare.parse.ParsePepsiFile;
 import com.google.common.collect.Sets;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

@@ -1,7 +1,7 @@
-package com.ui.service.controller;
+package com.sf.ui.controller;
 
-import com.ui.service.remote.WeatherFeignService;
-import com.ui.service.remote.dto.WeatherServiceResponseDto;
+import com.sf.ui.remote.WeatherFeignService;
+import com.sf.ui.remote.dto.WeatherServiceResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

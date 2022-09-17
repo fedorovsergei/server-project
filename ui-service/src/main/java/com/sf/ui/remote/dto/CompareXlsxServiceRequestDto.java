@@ -1,15 +1,11 @@
-package com.fedorov.demo.dto;
+package com.sf.ui.remote.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
-public class RequestDto {
+@Builder
+public class CompareXlsxServiceRequestDto {
 
     private String oneCFile;
     private Integer oneCNamePosition;

@@ -1,4 +1,4 @@
-package com.ui.service.remote.dto;
+package com.sf.ui.remote.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.fedorov.demo.dto;
+package com.sf.compare.dto;
 
 import lombok.Builder;
 import lombok.Data;

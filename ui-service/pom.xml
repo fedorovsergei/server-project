@@ -9,8 +9,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.ui</groupId>
-    <artifactId>service</artifactId>
+    <groupId>com.sf</groupId>
+    <artifactId>ui-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>service</name>
 

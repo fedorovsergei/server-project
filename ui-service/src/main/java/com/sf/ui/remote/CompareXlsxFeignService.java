@@ -1,7 +1,7 @@
-package com.ui.service.remote;
+package com.sf.ui.remote;
 
-import com.ui.service.remote.dto.CompareXlsxServiceRequestDto;
-import com.ui.service.remote.dto.CompareXlsxServiceResponseDto;
+import com.sf.ui.remote.dto.CompareXlsxServiceRequestDto;
+import com.sf.ui.remote.dto.CompareXlsxServiceResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

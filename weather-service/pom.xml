@@ -8,12 +8,12 @@
         <version>2.7.3</version>
         <relativePath/>
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>com.sf</groupId>
     <artifactId>weather-service</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
+
     <name>weather-service</name>
-    <description>weather-service</description>
 
     <properties>
         <java.version>15</java.version>

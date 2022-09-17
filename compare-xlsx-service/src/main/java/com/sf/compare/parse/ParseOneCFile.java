@@ -1,6 +1,6 @@
-package com.fedorov.demo.parse;
+package com.sf.compare.parse;
 
-import com.fedorov.demo.dto.CompareField;
+import com.sf.compare.dto.CompareField;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;

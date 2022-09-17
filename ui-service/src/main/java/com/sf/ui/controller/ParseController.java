@@ -1,8 +1,8 @@
-package com.ui.service.controller;
+package com.sf.ui.controller;
 
-import com.ui.service.remote.CompareXlsxFeignService;
-import com.ui.service.remote.dto.CompareXlsxServiceRequestDto;
-import com.ui.service.remote.dto.CompareXlsxServiceResponseDto;
+import com.sf.ui.remote.CompareXlsxFeignService;
+import com.sf.ui.remote.dto.CompareXlsxServiceRequestDto;
+import com.sf.ui.remote.dto.CompareXlsxServiceResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

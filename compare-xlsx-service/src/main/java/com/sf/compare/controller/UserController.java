@@ -1,8 +1,8 @@
-package com.fedorov.demo.controller;
+package com.sf.compare.controller;
 
-import com.fedorov.demo.dto.RequestDto;
-import com.fedorov.demo.dto.ResponseDto;
-import com.fedorov.demo.service.ParseService;
+import com.sf.compare.dto.RequestDto;
+import com.sf.compare.dto.ResponseDto;
+import com.sf.compare.service.ParseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
