@@ -13,5 +13,4 @@ app:
     weather_evening: weather__forecast
     agent: Chrome/4.0.249.0 Safari/532.5
   cron:
-#    remote-call: 1 0/10 * * * *
-    remote-call: -
+    remote-call: 1 0/10 * * * *
