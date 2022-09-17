@@ -43,6 +43,7 @@ public class RemoteService {
             return result;
         } catch (Exception e) {
             log.error("something go wrong");
+            e.printStackTrace();
             throw new IllegalArgumentException();
         }
     }
@@ -55,6 +56,7 @@ public class RemoteService {
             return result;
         } catch (Exception e) {
             log.error("something go wrong");
+            e.printStackTrace();
             throw new IllegalArgumentException();
         }
     }
