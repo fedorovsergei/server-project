@@ -46,7 +46,6 @@ public class ParseController {
         } catch (Exception e) {
             log.error("exception in ui service");
         }
-        model.addAttribute("errorFlag", true);
-        return "resultCompareFile";
+        return "error";
     }
 }

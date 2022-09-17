@@ -5,15 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<div th:if="errorFlag">
-    <div>Произошла ошибка</div>
-</div>
-<div th:unless="!errorFlag">
-    <div>
-        <th scope="row"><a th:text="${weather.getTime()}"></a></th>
-        <th scope="row"><a th:text="${weather.getValueNow()}"></a></th>
-        <th scope="row"><a th:text="${weather.getValueEvening()}"></a></th>
-    </div>
+<div>
+    <th scope="row"><a th:text="${weather.getTime()}"></a></th>
+    <th scope="row"><a th:text="${weather.getValueNow()}"></a></th>
+    <th scope="row"><a th:text="${weather.getValueEvening()}"></a></th>
 </div>
 </body>
 </html>

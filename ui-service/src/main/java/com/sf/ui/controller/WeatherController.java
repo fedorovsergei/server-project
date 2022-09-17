@@ -29,7 +29,6 @@ public class WeatherController {
         } catch (Exception e) {
             log.error("exception in ui service");
         }
-        model.addAttribute("errorFlag", true);
-        return "weather";
+        return "error";
     }
 }
