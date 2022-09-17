@@ -1,13 +1,17 @@
-version: '3'
+version: '3.9'
 
 services:
+  networks:
+    etl_dev:
+      external: true
+
 
   weather-service:
     build: ./weather-service
     container_name: 'weather-service'
     image: 'weather-service'
     networks:
-      - "postgres"
+      - postgres
 
   compare-xlsx-service:
     build: ./compare-xlsx-service
