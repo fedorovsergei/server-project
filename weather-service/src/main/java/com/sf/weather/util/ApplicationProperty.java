@@ -1,4 +1,4 @@
-package com.sf.weather.Utils;
+package com.sf.weather.util;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

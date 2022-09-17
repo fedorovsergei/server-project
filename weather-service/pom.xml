@@ -8,11 +8,10 @@
         <version>2.7.3</version>
         <relativePath/>
     </parent>
+
     <groupId>com.sf</groupId>
     <artifactId>weather-service</artifactId>
-    <version>0.0.1</version>
-    <packaging>jar</packaging>
-
+    <version>1.0.0</version>
     <name>weather-service</name>
 
     <properties>
@@ -21,7 +20,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -63,7 +61,6 @@
             <artifactId>jsoup</artifactId>
             <version>${jsop.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>

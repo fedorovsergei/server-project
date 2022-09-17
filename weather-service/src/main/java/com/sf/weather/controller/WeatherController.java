@@ -19,11 +19,11 @@ public class WeatherController {
 
     @GetMapping("/weather")
     public WeatherHistory getTodayWeather() {
-        log.info("[API] start search weather");
+        log.info("[API] start call GET method /weather");
         try {
             return weatherService.getTodayWeather();
         } catch (Exception e) {
-            log.error("Scheduled job error: ", e);
+            log.error("exception in weather service");
             throw e;
         }
     }

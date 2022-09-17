@@ -1,9 +1,9 @@
 package com.sf.weather.service;
 
-import com.sf.weather.Utils.ApplicationProperty;
 import com.sf.weather.entity.WeatherHistory;
 import com.sf.weather.repo.WeatherRepository;
 import com.sf.weather.service.dto.ParamDto;
+import com.sf.weather.util.ApplicationProperty;
 import liquibase.repackaged.org.apache.commons.lang3.StringUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

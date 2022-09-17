@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class UserController {
+public class CompareController {
 
     private final ParseService parseService;
 
@@ -22,8 +22,8 @@ public class UserController {
         try {
             return parseService.getParse(requestDto);
         } catch (Exception e) {
-            log.error("exception in ui service");
-            throw new IllegalArgumentException();
+            log.error("exception in compare xlsx service");
+            throw e;
         }
     }
 }

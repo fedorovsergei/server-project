@@ -1,4 +1,4 @@
-package com.sf.ui.utils;
+package com.sf.ui.util;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
