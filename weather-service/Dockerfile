@@ -1,5 +1,4 @@
 FROM maven:3.8.6-openjdk-18-slim as target
-FROM maven:openjdk as build
 ENV HOME=/usr/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
