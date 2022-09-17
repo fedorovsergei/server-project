@@ -1,0 +1,15 @@
+version: '3.9'
+
+networks:
+  default:
+    name: backend
+
+services:
+
+  ui-service:
+    build: ./ui-service
+    container_name: 'ui-service'
+    image: 'ui-service'
+    ports:
+      - "80:8080"
+

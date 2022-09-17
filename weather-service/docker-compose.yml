@@ -1,0 +1,12 @@
+version: '3.9'
+
+networks:
+  default:
+    name: backend
+
+services:
+
+  weather-service:
+    build: ./weather-service
+    container_name: 'weather-service'
+    image: 'weather-service'

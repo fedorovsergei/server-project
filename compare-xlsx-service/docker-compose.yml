@@ -1,0 +1,12 @@
+version: '3.9'
+
+networks:
+  default:
+    name: backend
+
+services:
+
+  compare-xlsx-service:
+    build: ./compare-xlsx-service
+    container_name: 'compare-xlsx-service'
+    image: 'compare-xlsx-service'
