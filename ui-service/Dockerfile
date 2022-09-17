@@ -2,9 +2,11 @@ FROM maven:openjdk as build
 ENV HOME=/usr/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
-ADD . $HOME
-USER root
-RUN --mount=type=cache,target=/root/.m2 mvn -f /home/build/pom.xml clean compile
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+COPY src/ /build/src/
+RUN mvn package
 
 FROM openjdk:15
 COPY --from=build /usr/app/target/*.jar /app/app.jar
