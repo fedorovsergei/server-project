@@ -1,0 +1,16 @@
+version: '3.9'
+
+networks:
+  default:
+    name: backend
+
+services:
+
+  postgres:
+    image: 'postgres:14'
+    container_name: 'postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=root'
+    ports:
+      - "5432:5432"
