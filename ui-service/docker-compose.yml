@@ -19,4 +19,4 @@ services:
           memory: '256M'
         reservations:
           cpus: '0.10'
-          memory: '16M'
+          memory: '128M'
