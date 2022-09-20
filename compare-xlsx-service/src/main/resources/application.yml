@@ -3,3 +3,10 @@ management:
     web:
       exposure:
         include: health
+  health:
+    db:
+      enabled: true
+    defaults:
+      enabled: true
+    diskspace:
+      enabled: true
