@@ -10,3 +10,11 @@ services:
     build: ./
     container_name: 'compare-xlsx-service'
     image: 'compare-xlsx-service'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: '256M'
+        reservations:
+          cpus: '0.10'
+          memory: '16M'
