@@ -14,3 +14,11 @@ services:
       - 'POSTGRES_PASSWORD=root'
     ports:
       - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: '256M'
+        reservations:
+          cpus: '0.10'
+          memory: '32'
