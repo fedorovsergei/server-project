@@ -10,3 +10,11 @@ services:
     build: ./
     container_name: 'weather-service'
     image: 'weather-service'
+    deploy:
+      resources:
+        limits:
+          cpus: 0.10
+          memory: 32M
+        reservations:
+          cpus: 0.05
+          memory: 4M
