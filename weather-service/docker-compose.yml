@@ -2,7 +2,7 @@ version: '3.9'
 
 networks:
   default:
-    name: backend
+    name: 'backend'
 
 services:
 
@@ -13,8 +13,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.10
-          memory: 32M
+          cpus: '0.10'
+          memory: '32M'
         reservations:
-          cpus: 0.05
-          memory: 4M
+          cpus: '0.05'
+          memory: '4M'
