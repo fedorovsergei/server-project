@@ -19,7 +19,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: always
+        include: health
   health:
     db:
       enabled: true
