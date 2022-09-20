@@ -5,7 +5,6 @@ networks:
     name: 'backend'
 
 services:
-
   weather-service:
     build: ./
     container_name: 'weather-service'

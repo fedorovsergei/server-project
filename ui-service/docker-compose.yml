@@ -5,7 +5,6 @@ networks:
     name: backend
 
 services:
-
   ui-service:
     build: ./
     container_name: 'ui-service'
@@ -20,3 +19,9 @@ services:
         reservations:
           cpus: '0.10'
           memory: '128M'
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
+      interval: 120s
+      retries: 5
+      start_period: 20s
+      timeout: 20s

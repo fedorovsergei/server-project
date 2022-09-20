@@ -2,6 +2,7 @@ app:
   feign:
     weather-service-url: weather-service:8080
     compare-xlsx-service-url: compare-xlsx-service:8080
+
 feign:
   client:
     config:
@@ -9,3 +10,9 @@ feign:
         loggerLevel: basic
         connectTimeout: 20000
         readTimeout: 100000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
