@@ -8,5 +8,5 @@ import lombok.Data;
 public class ParamDto {
 
     private String now;
-    private String evening;
+    private String feeling;
 }

@@ -21,5 +21,5 @@ public class WeatherHistory {
     private Long id;
     private LocalDateTime time;
     private String valueNow;
-    private String valueEvening;
+    private String valueFeeling;
 }

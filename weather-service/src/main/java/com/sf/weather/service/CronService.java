@@ -15,7 +15,7 @@ public class CronService {
 
     private final WeatherService weatherService;
 
-//    @Scheduled(cron = "${app.cron.remote-call}", zone = "Europe/Moscow")
+    @Scheduled(cron = "${app.cron.remote-call}", zone = "Europe/Moscow")
     public void saveResultRemoteCall() {
         log.info("Scheduled job for call remote page start");
         try {

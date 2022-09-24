@@ -11,6 +11,5 @@ public class ApplicationProperty {
 
     private String url;
     private String weatherNow;
-    private String weatherEvening;
     private String agent;
 }

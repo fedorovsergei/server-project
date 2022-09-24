@@ -10,6 +10,7 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -33,9 +34,9 @@ public class WeatherService {
         WeatherHistory weatherHistory = weatherRepository.findByTime(now);
         if (weatherHistory == null) {
             log.info("weather not found in db, call remote page");
-//            weatherHistory = callUrl(now);
+            weatherHistory = callUrl(now);
         }
-//        log.info("return find weather for {}", weatherHistory.getTime());
+        log.info("return find weather for {}", weatherHistory.getTime());
         return Objects.requireNonNull(weatherHistory);
     }
 
@@ -46,17 +47,23 @@ public class WeatherService {
             log.error("not found weather in remote page");
             throw new IllegalArgumentException();
         }
-        return weatherRepository.save(parseToDto(paramDto.getNow(), paramDto.getEvening(), roundTime(now)));
+        return weatherRepository.save(parseToDto(paramDto.getNow(), paramDto.getFeeling(), roundTime(now)));
     }
 
     @SneakyThrows
     private ParamDto getWeather() {
         Document doc = Jsoup.connect(applicationProperty.getUrl())
                 .userAgent(applicationProperty.getAgent()).get();
+        Elements e = doc.getElementsByAttributeValue("class", applicationProperty.getWeatherNow());
+        String now = null;
+        String feeling = null;
+        if (!e.isEmpty()) now = e.get(0).text();
+        if (e.size() > 1) feeling = e.get(1).text();
+
         return ParamDto
                 .builder()
-                .now(doc.getElementsByAttributeValue("class", applicationProperty.getWeatherNow()).text())
-                .evening(doc.getElementsByAttributeValue("class", applicationProperty.getWeatherEvening()).text())
+                .now(now)
+                .feeling(feeling)
                 .build();
     }
 
@@ -65,11 +72,11 @@ public class WeatherService {
                 .plusMinutes(10 * (now.getMinute() / 10));
     }
 
-    private WeatherHistory parseToDto(String weatherNow, String weatherEvening, LocalDateTime now) {
+    private WeatherHistory parseToDto(String weatherNow, String weatherFeeling, LocalDateTime now) {
         return WeatherHistory
                 .builder()
                 .valueNow(weatherNow)
-                .valueEvening(weatherEvening)
+                .valueFeeling(weatherFeeling)
                 .time(now)
                 .build();
     }

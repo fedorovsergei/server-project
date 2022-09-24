@@ -1,6 +1,7 @@
 spring:
   datasource:
     url: jdbc:postgresql://postgres:5432/weather-service
+#    url: jdbc:postgresql://80.78.248.194:5432/weather-service
     username: postgres
     password: root
   liquibase:
@@ -8,10 +9,9 @@ spring:
 
 app:
   remote:
-    url: https://yandex.ru
-    weather-now: weather__temp
-    weather_evening: weather__forecast
-    agent: Chrome/4.0.249.0 Safari/532.5
+    url: https://www.gismeteo.ru/weather-sankt-peterburg-4079/
+    weather-now: unit unit_temperature_c
+    agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
   cron:
     remote-call: 1 0/10 * * * *
 
