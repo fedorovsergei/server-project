@@ -17,6 +17,7 @@
     <properties>
         <java.version>15</java.version>
         <jsop.version>1.15.3</jsop.version>
+        <postgres.version>42.5.0</postgres.version>
     </properties>
 
     <dependencies>
@@ -33,7 +34,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.5.0</version>
+            <version>${postgres.version}</version>
         </dependency>
 
         <dependency>
@@ -44,11 +45,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
         <dependency>
