@@ -2,6 +2,7 @@ package com.sf.ui.controller;
 
 import com.sf.ui.remote.dto.WeatherServiceResponseDto;
 import com.sf.ui.service.RemoteService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ public class WeatherController {
 
     private final RemoteService remoteService;
 
+    @Operation
     @GetMapping("/get")
     public String getWeather(Model model) {
         log.info("[API] start call method /weather/get");
