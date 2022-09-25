@@ -28,3 +28,8 @@ services:
         delay: "20s"
         max_attempts: 3
         window: "20s"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
