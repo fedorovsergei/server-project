@@ -2,6 +2,7 @@ package com.sf.ui.controller;
 
 import com.sf.ui.remote.dto.CompareXlsxServiceResponseDto;
 import com.sf.ui.service.RemoteService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -20,12 +21,14 @@ public class ParseController {
 
     private final RemoteService remoteService;
 
+    @Operation
     @GetMapping("/get")
     public String parseFile() {
         log.info("[API] start call GET method /parse/get");
         return "startCompareFile";
     }
 
+    @Operation
     @PostMapping("/get")
     public String parseFile(@RequestParam("oneCFile") MultipartFile oneCFile,
                             @RequestParam("pepsiFile") MultipartFile pepsiFile,
