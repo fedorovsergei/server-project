@@ -5,10 +5,10 @@ networks:
     name: backend
 
 services:
-  compare-xlsx-service:
+  kafka-test-consumer:
     build: ./
-    container_name: 'compare-xlsx-service'
-    image: 'compare-xlsx-service'
+    container_name: 'kafka-test-consumer'
+    image: 'kafka-test-consumer'
     deploy:
       resources:
         limits:

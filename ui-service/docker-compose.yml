@@ -12,12 +12,6 @@ services:
     ports:
       - "80:8080"
     deploy:
-      replicas: 1
-      restart_policy:
-        condition: "on-failure"
-        delay: "20s"
-        max_attempts: 3
-        window: "20s"
       resources:
         limits:
           cpus: '0.50'
@@ -25,10 +19,3 @@ services:
         reservations:
           cpus: '0.10'
           memory: '32M'
-    healthcheck:
-      test: "curl --fail localhost:8080/actuator/health | grep UP || exit 1"
-      interval: "20s"
-      retries: 5
-      start_period: "20s"
-      timeout: "20s"
-

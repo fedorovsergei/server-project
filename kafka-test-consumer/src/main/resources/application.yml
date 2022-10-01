@@ -1,0 +1,4 @@
+app:
+  kafka:
+    server: kafka:29092
+    group-id: test-group

@@ -6,9 +6,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-public class WeatherServiceApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(WeatherServiceApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }

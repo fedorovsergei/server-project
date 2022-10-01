@@ -1,12 +1,14 @@
-package com.sf.compare;
+package com.sf.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+@EnableScheduling
 @SpringBootApplication
-public class CompareApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(CompareApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
