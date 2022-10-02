@@ -29,7 +29,7 @@ public class ParsePepsiFile {
 
         try (XSSFWorkbook workbook = new XSSFWorkbook(inputStream)) {
             XSSFSheet sheet = workbook.getSheetAt(0);
-
+            log.info(sheet.getSheetName());
             for (Row row : sheet) {
                 Cell cellName = row.getCell(pepsiNamePosition - 1);
                 Cell cellCount = row.getCell(pepsiCountPosition - 1);

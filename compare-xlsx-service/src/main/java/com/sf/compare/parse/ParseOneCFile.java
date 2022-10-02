@@ -29,7 +29,7 @@ public class ParseOneCFile {
 
         try (XSSFWorkbook workbook = new XSSFWorkbook(inputStream)) {
             XSSFSheet sheet = workbook.getSheetAt(0);
-
+            log.info(sheet.getSheetName());
             for (Row row : sheet) {
                 Cell cellName = row.getCell(namePosition - 1);
                 Cell cellCountPlus = row.getCell(oneCPlusPosition - 1);
@@ -59,6 +59,4 @@ public class ParseOneCFile {
         }
         return new HashSet<>(result.values());
     }
-
-
 }
