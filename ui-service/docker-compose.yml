@@ -1,21 +1,21 @@
-version: '3.9'
+version: "3.9"
 
 networks:
   default:
-    name: backend
+    name: "backend"
 
 services:
   ui-service:
     build: ./
-    container_name: 'ui-service'
-    image: 'ui-service'
+    container_name: "ui-service"
+    image: "ui-service"
     ports:
       - "80:8080"
     deploy:
       resources:
         limits:
-          cpus: '0.50'
-          memory: '512M'
+          cpus: "0.50"
+          memory: "512M"
         reservations:
-          cpus: '0.10'
-          memory: '32M'
+          cpus: "0.10"
+          memory: "32M"

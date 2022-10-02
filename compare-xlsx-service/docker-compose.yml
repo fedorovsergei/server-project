@@ -1,19 +1,19 @@
-version: '3.9'
+version: "3.9"
 
 networks:
   default:
-    name: backend
+    name: "backend"
 
 services:
   compare-xlsx-service:
     build: ./
-    container_name: 'compare-xlsx-service'
-    image: 'compare-xlsx-service'
+    container_name: "compare-xlsx-service"
+    image: "compare-xlsx-service"
     deploy:
       resources:
         limits:
-          cpus: '0.50'
-          memory: '512M'
+          cpus: "0.50"
+          memory: "512M"
         reservations:
-          cpus: '0.10'
-          memory: '32M'
+          cpus: "0.10"
+          memory: "32M"
