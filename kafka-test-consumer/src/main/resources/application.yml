@@ -1,5 +1,0 @@
-app:
-  kafka:
-    server: kafka:29092
-#    server: localhost:9092
-    group-id: test-group
