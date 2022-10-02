@@ -48,15 +48,9 @@ public class RemoteService {
     }
 
     public WeatherHistory getWeather() {
-        try {
-            log.info("start call remote method to get weather");
-            WeatherHistory result = weatherService.getWeather();
-            log.info("remote method successful return result");
-            return result;
-        } catch (Exception e) {
-            log.error("something go wrong");
-            e.printStackTrace();
-            throw new IllegalArgumentException();
-        }
+        log.info("start call remote method to get weather");
+        WeatherHistory result = weatherService.getWeather();
+        log.info("remote method successful return result");
+        return result;
     }
 }
