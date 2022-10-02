@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 
 @Slf4j
 @Service
@@ -32,7 +31,7 @@ public class WeatherService {
             log.error("not found weather in remote page");
             throw new IllegalArgumentException();
         }
-        weatherRepository.save(parseToDto(paramDto.getNow(), paramDto.getFeeling(), roundTime(now)));
+        weatherRepository.save(parseToDto(paramDto.getNow(), paramDto.getFeeling(), now));
     }
 
     @SneakyThrows
@@ -50,11 +49,6 @@ public class WeatherService {
                 .now(now)
                 .feeling(feeling)
                 .build();
-    }
-
-    private LocalDateTime roundTime(LocalDateTime now) {
-        return now.truncatedTo(ChronoUnit.HOURS)
-                .plusMinutes(10 * (now.getMinute() / 10));
     }
 
     private WeatherHistory parseToDto(String weatherNow, String weatherFeeling, LocalDateTime now) {
