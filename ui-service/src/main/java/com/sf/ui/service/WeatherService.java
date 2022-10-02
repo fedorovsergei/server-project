@@ -5,12 +5,10 @@ import com.sf.ui.repo.WeatherRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 @Slf4j
@@ -20,7 +18,6 @@ public class WeatherService {
 
     private final WeatherRepository weatherRepository;
 
-    @Transactional
     public WeatherHistory getWeather() {
         log.info("start search weather");
         WeatherHistory weatherHistory = weatherRepository.findByTime(LocalDateTime.now(ZoneId.of("Europe/Moscow")));
