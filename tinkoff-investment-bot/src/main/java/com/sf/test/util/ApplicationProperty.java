@@ -1,4 +1,4 @@
-package com.sf.test.kafka;
+package com.sf.test.util;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "app.kafka")
+@ConfigurationProperties(prefix = "app.key")
 public class ApplicationProperty {
 
-    private String server;
-    private String groupId;
+    private String sandbox;
+    private String readOnly;
 }

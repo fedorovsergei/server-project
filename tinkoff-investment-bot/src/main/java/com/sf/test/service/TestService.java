@@ -1,20 +1,21 @@
 package com.sf.test.service;
 
+import com.sf.test.util.ApplicationProperty;
 import lombok.RequiredArgsConstructor;
-import org.springframework.kafka.core.KafkaTemplate;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
-public class KafkaSendService {
+public class TestService {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final ApplicationProperty applicationProperty;
 
     @Scheduled(cron = "0/2 0/1 * 1/1 * *", zone = "Europe/Moscow")
     public void test() {
-        kafkaTemplate.send("test-producer", "hello222" + LocalDateTime.now());
+        System.out.println(applicationProperty.getSandbox());
+        System.out.println(applicationProperty.getReadOnly());
     }
 }

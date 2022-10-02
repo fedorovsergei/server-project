@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
-public class KafkaSendService {
+public class KafkaListenService {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 

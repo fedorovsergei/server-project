@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class KafkaReadService {
+public class KafkaSendService {
 
     @KafkaListener(topics = "test-producer")
     public void test(String message) {
