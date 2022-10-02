@@ -12,7 +12,7 @@ feign:
 
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/weather-service
-    #    url: jdbc:postgresql://80.78.248.194:5432/weather-service
+#    url: jdbc:postgresql://postgres:5432/weather-service
+    url: jdbc:postgresql://80.78.248.194:5432/weather-service
     username: postgres
     password: root
