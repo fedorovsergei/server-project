@@ -1,0 +1,19 @@
+version: '3.9'
+
+networks:
+  default:
+    name: backend
+
+services:
+  tinkoff-investment-bot:
+    build: ./
+    container_name: 'tinkoff-investment-bot'
+    image: 'tinkoff-investment-bot'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: '512M'
+        reservations:
+          cpus: '0.10'
+          memory: '32M'

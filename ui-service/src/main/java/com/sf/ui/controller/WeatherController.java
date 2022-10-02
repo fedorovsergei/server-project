@@ -1,6 +1,6 @@
 package com.sf.ui.controller;
 
-import com.sf.ui.remote.dto.WeatherServiceResponseDto;
+import com.sf.ui.entity.WeatherHistory;
 import com.sf.ui.service.RemoteService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ public class WeatherController {
     public String getWeather(Model model) {
         log.info("[API] start call method /weather/get");
         try {
-            WeatherServiceResponseDto result = remoteService.getWeather();
+            WeatherHistory result = remoteService.getWeather();
             if (result != null) {
                 model.addAttribute("weather", result);
                 return "weather";

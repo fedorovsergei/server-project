@@ -1,6 +1,5 @@
 app:
   feign:
-    weather-service-url: weather-service:8080
     compare-xlsx-service-url: compare-xlsx-service:8080
 
 feign:
@@ -11,15 +10,9 @@ feign:
         connectTimeout: 20000
         readTimeout: 100000
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health
-  health:
-    db:
-      enabled: true
-    defaults:
-      enabled: true
-    diskspace:
-      enabled: true
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/weather-service
+    #    url: jdbc:postgresql://80.78.248.194:5432/weather-service
+    username: postgres
+    password: root

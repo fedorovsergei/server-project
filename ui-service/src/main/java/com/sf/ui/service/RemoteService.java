@@ -1,10 +1,9 @@
 package com.sf.ui.service;
 
+import com.sf.ui.entity.WeatherHistory;
 import com.sf.ui.remote.CompareXlsxFeignService;
-import com.sf.ui.remote.WeatherFeignService;
 import com.sf.ui.remote.dto.CompareXlsxServiceRequestDto;
 import com.sf.ui.remote.dto.CompareXlsxServiceResponseDto;
-import com.sf.ui.remote.dto.WeatherServiceResponseDto;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class RemoteService {
 
     private final CompareXlsxFeignService compareXlsxFeignService;
-    private final WeatherFeignService weatherFeignService;
+    private final WeatherService weatherService;
 
     public CompareXlsxServiceResponseDto startCallParse(@NonNull MultipartFile oneCFile,
                                                         @NonNull MultipartFile pepsiFile,
@@ -48,10 +47,10 @@ public class RemoteService {
         }
     }
 
-    public WeatherServiceResponseDto getWeather() {
+    public WeatherHistory getWeather() {
         try {
             log.info("start call remote method to get weather");
-            WeatherServiceResponseDto result = weatherFeignService.getWeather();
+            WeatherHistory result = weatherService.getWeather();
             log.info("remote method successful return result");
             return result;
         } catch (Exception e) {

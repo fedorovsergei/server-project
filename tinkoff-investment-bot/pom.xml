@@ -10,17 +10,20 @@
     </parent>
 
     <groupId>com.sf</groupId>
-    <artifactId>ui-service</artifactId>
+    <artifactId>tinkoff-investment-bot</artifactId>
     <version>1.0.0</version>
-    <name>ui-service</name>
+    <name>kafka-test-consumer</name>
 
     <properties>
         <java.version>15</java.version>
-        <openfeign.version>3.1.4</openfeign.version>
-        <org.springdoc.version>1.6.11</org.springdoc.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -28,23 +31,7 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>${openfeign.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
         <dependency>
@@ -53,14 +40,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${org.springdoc.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
     </dependencies>
 
